@@ -6,9 +6,10 @@ public class ObjectHit : MonoBehaviour
 {
     protected virtual void OnCollisionEnter(Collision collision)
     {
-        if (collision.collider.CompareTag("Player"))
+        if (!CompareTag("Hit") && collision.collider.CompareTag("Player"))
         {
-            GetComponent<MeshRenderer>().material.color = Color.red; 
+            GetComponent<MeshRenderer>().material.color = Color.red;
+            tag = "Hit";
         }
 
     }

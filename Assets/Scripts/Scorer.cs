@@ -7,6 +7,9 @@ public class Scorer : MonoBehaviour
     int bumps = 0;
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log($"Bumped {++bumps} times");
+        if (!collision.collider.CompareTag("Hit"))
+        {
+            Debug.Log($"Bumped {++bumps} times");
+        }
     }
 }
